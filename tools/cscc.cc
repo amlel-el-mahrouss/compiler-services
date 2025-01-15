@@ -23,10 +23,10 @@ int main(int argc, char const* argv[])
 	{
 		if (strstr(argv[index_arg], "--cl:h"))
 		{
-			std::printf("tqc++: Frontend C++ Compiler.\n");
-			std::printf("tqc++: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
-			std::printf("tqc++: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
-			std::printf("libCxxCompiler.dylib: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("csc++: Frontend C/C++ Compiler.\n");
+			std::printf("csc++: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
+			std::printf("csc++: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("libCompiler.dylib: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
 
 			return 0;
 		}
@@ -34,7 +34,7 @@ int main(int argc, char const* argv[])
 
 	if (auto code = CPlusPlusPreprocessorMain(argc, argv); code)
 	{
-		std::printf("tqc++: frontend exited with code %i.\n", code);
+		std::printf("csc++: frontend exited with code %i.\n", code);
 		return 1;
 	}
 	else
@@ -59,7 +59,8 @@ int main(int argc, char const* argv[])
 				arg += ".pp";
 
 				args_list_cxx.push_back(arg);
-			} else if (strstr(argv[index_arg], ".c"))
+			}
+			else if (strstr(argv[index_arg], ".c"))
 			{
 				std::printf("cscc: error: C is not ready yet.\n");
 				return EXIT_FAILURE;
@@ -72,7 +73,7 @@ int main(int argc, char const* argv[])
 
 			if (auto code = CompilerCPlusPlusX8664(2, arr_cli); code)
 			{
-				std::printf("tqc++: assembler exited with code %i.", code);
+				std::printf("csc++: assembler exited with code %i.", code);
 			}
 		}
 
@@ -82,7 +83,7 @@ int main(int argc, char const* argv[])
 
 			if (auto code = AssemblerMainAMD64(2, arr_cli); code)
 			{
-				std::printf("tqc++: assembler exited with code %i.", code);
+				std::printf("csc++: assembler exited with code %i.", code);
 			}
 		}
 	}

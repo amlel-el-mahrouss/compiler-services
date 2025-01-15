@@ -842,7 +842,7 @@ namespace uuids
 		}
 
 	private:
-		uuid		  nsuuid;
+		uuid		 nsuuid;
 		Detail::sha1 hasher;
 	};
 

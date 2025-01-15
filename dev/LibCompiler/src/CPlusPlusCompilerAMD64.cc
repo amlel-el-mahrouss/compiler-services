@@ -11,7 +11,7 @@
 
 #define kPrintF printf
 
-#define kExitOK	(EXIT_SUCCESS)
+#define kExitOK (EXIT_SUCCESS)
 #define kExitNO (EXIT_FAILURE)
 
 #define kSplashCxx() \
@@ -136,10 +136,10 @@ static int kMachine = LibCompiler::AssemblyFactory::kArchAMD64;
 
 /////////////////////////////////////////
 
-static size_t									  kRegisterCnt	   = kAsmRegisterLimit;
-static size_t									  kStartUsable	   = 8;
-static size_t									  kUsableLimit	   = 15;
-static size_t									  kRegisterCounter = kStartUsable;
+static size_t									 kRegisterCnt	  = kAsmRegisterLimit;
+static size_t									 kStartUsable	  = 8;
+static size_t									 kUsableLimit	  = 15;
+static size_t									 kRegisterCounter = kStartUsable;
 static std::vector<LibCompiler::CompilerKeyword> kKeywords;
 
 /////////////////////////////////////////
@@ -148,13 +148,13 @@ static std::vector<LibCompiler::CompilerKeyword> kKeywords;
 
 /////////////////////////////////////////
 
-static std::vector<std::string>		 kFileList;
+static std::vector<std::string>		kFileList;
 static LibCompiler::AssemblyFactory kFactory;
-static bool							 kInStruct	  = false;
-static bool							 kOnWhileLoop = false;
-static bool							 kOnForLoop	  = false;
-static bool							 kInBraces	  = false;
-static size_t						 kBracesCount = 0UL;
+static bool							kInStruct	 = false;
+static bool							kOnWhileLoop = false;
+static bool							kOnForLoop	 = false;
+static bool							kInBraces	 = false;
+static size_t						kBracesCount = 0UL;
 
 /* @brief C++ compiler backend for the ZKA C++ driver */
 class CompilerFrontendCPlusPlus final : public LibCompiler::ICompilerFrontend
@@ -226,7 +226,7 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 	if (text.empty())
 		return false;
 
-	std::size_t														   index = 0UL;
+	std::size_t														  index = 0UL;
 	std::vector<std::pair<LibCompiler::CompilerKeyword, std::size_t>> keywords_list;
 
 	bool		found		 = false;
@@ -373,7 +373,7 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 						ch = '_';
 				}
 
-				syntax_tree.fUserValue += "jge __OFFSET_ON_TRUE_NDK\nsegment .code64 __OFFSET_ON_TRUE_NDK:\n";
+				syntax_tree.fUserValue += "jge __OFFSET_ON_TRUE_LIBCOMPILER\nlocal_segment .code64 __OFFSET_ON_TRUE_LIBCOMPILER:\n";
 			}
 
 			break;
@@ -393,8 +393,8 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 			return false;
 
 		accept:
-			std::string fnName = text;
-			size_t indexFnName = 0;
+			std::string fnName		= text;
+			size_t		indexFnName = 0;
 
 			// this one is for the type.
 			for (auto& ch : text)
@@ -424,7 +424,7 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 				{
 					if (fnName[indexFnName - 1] != ')')
 						Detail::print_error("Invalid function name: " + fnName, file);
-				
+
 					if ((indexFnName + 1) != fnName.size())
 						Detail::print_error("Extra characters after function name: " + fnName, file);
 				}
@@ -437,7 +437,7 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 
 			break;
 
-tk_write_assembly:
+		tk_write_assembly:
 			syntax_tree.fUserValue = "jmp __LIBCOMPILER_" + fnName + "\n";
 		}
 		case LibCompiler::KeywordKind::kKeywordKindFunctionEnd: {
@@ -779,8 +779,7 @@ tk_write_assembly:
 				syntax_tree.fUserValue = "ret\n";
 			}
 		}
-		default:
-		{
+		default: {
 			break;
 		}
 		}
@@ -854,28 +853,10 @@ public:
 		auto fmt = LibCompiler::current_date();
 
 		(*kState.fOutputAssembly) << "; Repository Path: /" << src_file << "\n";
-
-		std::filesystem::path path = std::filesystem::path("./");
-
-		while (path != Detail::expand_home(std::filesystem::path("~")))
-		{
-			for (auto const& dir_entry : std::filesystem::recursive_directory_iterator{path})
-			{
-				if (dir_entry.is_directory() &&
-					dir_entry.path().string().find(".git") != std::string::npos)
-					goto break_loop;
-			}
-
-			path = path.parent_path();
-		break_loop:
-			(*kState.fOutputAssembly) << "; Repository Style: Git\n";
-			break;
-		}
-
 		(*kState.fOutputAssembly)
 			<< "; Assembler Dialect: AMD64 LibCompiler Assembler. (Generated from C++)\n";
 		(*kState.fOutputAssembly) << "; Date: " << fmt << "\n";
-		(*kState.fOutputAssembly) << "#bits 64\n#org 0x1000000"
+		(*kState.fOutputAssembly) << "#bits 64\n#org 0x10000000"
 								  << "\n";
 
 		kState.fSyntaxTree = new LibCompiler::SyntaxLeafList();
@@ -915,7 +896,7 @@ static void cxx_print_help()
 {
 	kSplashCxx();
 	kPrintF("%s", "No help available, see:\n");
-	kPrintF("%s", "www.zws.zka.com/help/c++lang\n");
+	kPrintF("%s", "https://el-mahrouss-logic.com/\n");
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
