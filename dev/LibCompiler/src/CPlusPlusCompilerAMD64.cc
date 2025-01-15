@@ -210,7 +210,7 @@ static std::size_t kFunctionEmbedLevel = 0UL;
 
 const char* CompilerFrontendCPlusPlus::Language()
 {
-	return "ZKA C++";
+	return "C++";
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
