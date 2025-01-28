@@ -210,8 +210,8 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 
 			if (kRecords.empty())
 			{
-				kStdErr << "AssemblerPower: At least one record is needed to write an object "
-						   "file.\nAssemblerPower: Make one using `public_segment .code64 foo_bar`.\n";
+				kStdErr << "AssemblerARM64: At least one record is needed to write an object "
+						   "file.\nAssemblerARM64: Make one using `public_segment .code64 foo_bar`.\n";
 
 				std::filesystem::remove(object_output);
 				return 1;
@@ -230,7 +230,7 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 				file_ptr_out << record_hdr;
 
 				if (kVerbose)
-					kStdOut << "AssemblerPower: Wrote record " << record_hdr.fName << "...\n";
+					kStdOut << "AssemblerARM64: Wrote record " << record_hdr.fName << "...\n";
 			}
 
 			// increment once again, so that we won't lie about the kUndefinedSymbols.
@@ -241,7 +241,7 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 				LibCompiler::AERecordHeader undefined_sym{0};
 
 				if (kVerbose)
-					kStdOut << "AssemblerPower: Wrote symbol " << sym << " to file...\n";
+					kStdOut << "AssemblerARM64: Wrote symbol " << sym << " to file...\n";
 
 				undefined_sym.fKind	  = kAENullType;
 				undefined_sym.fSize	  = sym.size();
@@ -272,7 +272,7 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 		{
 			if (kVerbose)
 			{
-				kStdOut << "AssemblerPower: Write raw binary...\n";
+				kStdOut << "AssemblerARM64: Write raw binary...\n";
 			}
 		}
 
@@ -283,7 +283,7 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 		}
 
 		if (kVerbose)
-			kStdOut << "AssemblerPower: Wrote file with program in it.\n";
+			kStdOut << "AssemblerARM64: Wrote file with program in it.\n";
 
 		file_ptr_out.flush();
 		file_ptr_out.close();
@@ -297,7 +297,7 @@ LIBCOMPILER_MODULE(AssemblerMainARM64)
 asm_fail_exit:
 
 	if (kVerbose)
-		kStdOut << "AssemblerPower: Exit failed.\n";
+		kStdOut << "AssemblerARM64: Exit failed.\n";
 
 	return LIBCOMPILER_EXEC_ERROR;
 }

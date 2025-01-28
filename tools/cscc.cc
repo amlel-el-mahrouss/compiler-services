@@ -25,8 +25,8 @@ int main(int argc, char const* argv[])
 		{
 			std::printf("csc++: Frontend C/C++ Compiler.\n");
 			std::printf("csc++: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
-			std::printf("csc++: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
-			std::printf("libCompiler.dylib: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("csc++: Designed by Amlal El Mahrouss, Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("LibCompiler: Designed by Amlal El Mahrouss, Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
 
 			return 0;
 		}
@@ -62,7 +62,7 @@ int main(int argc, char const* argv[])
 			}
 			else if (strstr(argv[index_arg], ".c"))
 			{
-				std::printf("cscc: error: C is not ready yet.\n");
+				std::printf("cscc: error: C support is not ready yet.\n");
 				return EXIT_FAILURE;
 			}
 		}
