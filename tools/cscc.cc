@@ -5,7 +5,7 @@
 ------------------------------------------- */
 
 /// @file cscc.cc
-/// @brief ZKA C++ frontend compiler.
+/// @brief OpenNE C++ frontend compiler.
 
 #include <LibCompiler/Defines.h>
 #include <LibCompiler/Version.h>
@@ -25,8 +25,8 @@ int main(int argc, char const* argv[])
 		{
 			std::printf("csc++: Frontend C/C++ Compiler.\n");
 			std::printf("csc++: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
-			std::printf("csc++: Designed by Amlal El Mahrouss, Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
-			std::printf("LibCompiler: Designed by Amlal El Mahrouss, Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("csc++: Written by Amlal El Mahrouss, Copyright (C) 2024-2025 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("LibCompiler: Written by Amlal El Mahrouss, Copyright (C) 2024-2025 Amlal El Mahrouss, all rights reserved.\n");
 
 			return 0;
 		}

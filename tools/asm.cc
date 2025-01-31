@@ -5,7 +5,7 @@
 ------------------------------------------- */
 
 /// @file Linker.cxx
-/// @brief ZKA C++ frontend for ZKA OS.
+/// @brief OpenNE C++ frontend for OpenNE OS.
 
 #include <LibCompiler/Defines.h>
 #include <LibCompiler/Version.h>

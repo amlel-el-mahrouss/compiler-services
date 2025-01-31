@@ -977,7 +977,7 @@ LIBCOMPILER_MODULE(CPlusPlusPreprocessorMain)
 
 				if (strcmp(argv[index], "--bpp:?") == 0)
 				{
-					printf("%s\n", "ZKA Preprocessor Driver v1.11, (c) Amlal El Mahrouss.");
+					printf("%s\n", "OpenNE Preprocessor Driver v1.11, (c) Amlal El Mahrouss.");
 					printf("%s\n", "--bpp:working-dir <path>: set directory to working path.");
 					printf("%s\n", "--bpp:include-dir <path>: add directory to include path.");
 					printf("%s\n", "--bpp:def <name> <value>: define a macro.");

@@ -1482,7 +1482,7 @@ public:
 
 #define kPrintF printf
 #define kSplashCxx() \
-	kPrintF(kWhite "ZKA C Driver, %s, (c) Amlal El Mahrouss.\n", kDistVersion)
+	kPrintF(kWhite "OpenNE C Driver, %s, (c) Amlal El Mahrouss.\n", kDistVersion)
 
 static void cc_print_help()
 {

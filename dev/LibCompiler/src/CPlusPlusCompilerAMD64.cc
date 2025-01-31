@@ -25,7 +25,7 @@
 
 #include <cstdio>
 
-/* ZKA C++ Compiler */
+/* OpenNE C++ Compiler */
 /* This is part of the LibCompiler. */
 /* (c) Amlal El Mahrouss. */
 
@@ -156,7 +156,7 @@ static bool							kOnForLoop	 = false;
 static bool							kInBraces	 = false;
 static size_t						kBracesCount = 0UL;
 
-/* @brief C++ compiler backend for the ZKA C++ driver */
+/* @brief C++ compiler backend for the OpenNE C++ driver */
 class CompilerFrontendCPlusPlus final : public LibCompiler::ICompilerFrontend
 {
 public:

@@ -63,7 +63,7 @@ namespace Detail
 enum
 {
 	kABITypeStart	= 0x1010, /* Invalid ABI start of ABI list. */
-	kABITypeZKA		= 0x5046, /* PF (ZKA PEF ABI) */
+	kABITypeZKA		= 0x5046, /* PF (OpenNE PEF ABI) */
 	kABITypeInvalid = 0xFFFF,
 };
 
@@ -90,8 +90,8 @@ static uintptr_t kByteCount = 1024;
 #define kPrintF			printf
 #define kLinkerSplash() kPrintF(kWhite kLinkerVersionStr, kDistVersion)
 
-///	@brief ZKA 64-bit Linker.
-/// @note This linker is made for PEF executable, thus ZKA based OSes.
+///	@brief OpenNE 64-bit Linker.
+/// @note This linker is made for PEF executable, thus OpenNE based OSes.
 LIBCOMPILER_MODULE(DynamicLinker64PEF)
 {
 	bool is_executable = true;

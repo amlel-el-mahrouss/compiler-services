@@ -7,7 +7,7 @@
 #include <LibCompiler/Defines.h>
 
 /// @file ld64.cxx
-/// @brief ZKA Linker for AE objects.
+/// @brief OpenNE Linker for AE objects.
 
 TK_IMPORT_C int DynamicLinker64PEF(int argc, char const* argv[]);
 
