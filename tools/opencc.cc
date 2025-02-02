@@ -4,7 +4,7 @@
 
 ------------------------------------------- */
 
-/// @file cscc.cc
+/// @file opencc.cc
 /// @brief OpenNE C++ frontend compiler.
 
 #include <LibCompiler/Defines.h>
@@ -13,9 +13,9 @@
 #include <cstring>
 #include <vector>
 
-TK_IMPORT_C int CPlusPlusPreprocessorMain(int argc, char const* argv[]);
-TK_IMPORT_C int CompilerCPlusPlusX8664(int argc, char const* argv[]);
-TK_IMPORT_C int AssemblerMainAMD64(int argc, char const* argv[]);
+LC_IMPORT_C int CPlusPlusPreprocessorMain(int argc, char const* argv[]);
+LC_IMPORT_C int CompilerCPlusPlusX8664(int argc, char const* argv[]);
+LC_IMPORT_C int AssemblerMainAMD64(int argc, char const* argv[]);
 
 int main(int argc, char const* argv[])
 {
@@ -23,9 +23,9 @@ int main(int argc, char const* argv[])
 	{
 		if (strstr(argv[index_arg], "--cl:h"))
 		{
-			std::printf("csc++: Frontend C/C++ Compiler.\n");
-			std::printf("csc++: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
-			std::printf("csc++: Written by Amlal El Mahrouss, Copyright (C) 2024-2025 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("opencc: Frontend C/C++ Compiler.\n");
+			std::printf("opencc: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
+			std::printf("opencc: Written by Amlal El Mahrouss, Copyright (C) 2024-2025 Amlal El Mahrouss, all rights reserved.\n");
 			std::printf("LibCompiler: Written by Amlal El Mahrouss, Copyright (C) 2024-2025 Amlal El Mahrouss, all rights reserved.\n");
 
 			return 0;
@@ -34,7 +34,7 @@ int main(int argc, char const* argv[])
 
 	if (auto code = CPlusPlusPreprocessorMain(argc, argv); code)
 	{
-		std::printf("csc++: frontend exited with code %i.\n", code);
+		std::printf("opencc: frontend exited with code %i.\n", code);
 		return 1;
 	}
 	else
@@ -62,7 +62,7 @@ int main(int argc, char const* argv[])
 			}
 			else if (strstr(argv[index_arg], ".c"))
 			{
-				std::printf("cscc: error: C support is not ready yet.\n");
+				std::printf("opencc: error: C support is not ready yet.\n");
 				return EXIT_FAILURE;
 			}
 		}
@@ -73,7 +73,7 @@ int main(int argc, char const* argv[])
 
 			if (auto code = CompilerCPlusPlusX8664(2, arr_cli); code)
 			{
-				std::printf("csc++: assembler exited with code %i.", code);
+				std::printf("opencc: assembler exited with code %i.", code);
 			}
 		}
 
@@ -83,7 +83,7 @@ int main(int argc, char const* argv[])
 
 			if (auto code = AssemblerMainAMD64(2, arr_cli); code)
 			{
-				std::printf("csc++: assembler exited with code %i.", code);
+				std::printf("opencc: assembler exited with code %i.", code);
 			}
 		}
 	}
