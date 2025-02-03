@@ -4,8 +4,8 @@
 
 ------------------------------------------- */
 
-/// @file Linker.cxx
-/// @brief OpenNE C++ frontend for OpenNE OS.
+/// @file asm.cxx
+/// @brief OpenNE assembler frontend.
 
 #include <LibCompiler/Defines.h>
 #include <LibCompiler/Version.h>
