@@ -39,8 +39,8 @@ int main(int argc, char const* argv[])
 		{
 			std::printf("asm.exe: Frontend Assembler (64x0, power64, x64).\n");
 			std::printf("asm.exe: Version: %s, Release: %s.\n", kDistVersion, kDistRelease);
-			std::printf("asm.exe: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
-			std::printf("libCompiler.dylib: Designed by Amlal El Mahrouss., Copyright (C) 2024 Amlal El Mahrouss, all rights reserved.\n");
+			std::printf("asm.exe: Designed by Amlal El Mahrouss., Copyright (C) 2024-2025 Amlal EL Mahrouss, all rights reserved.\n");
+			std::printf("libCompiler.dylib: Designed by Amlal El Mahrouss., Copyright (C) 2024-2025 Amlal EL Mahrouss, all rights reserved.\n");
 
 			return 0;
 		}
