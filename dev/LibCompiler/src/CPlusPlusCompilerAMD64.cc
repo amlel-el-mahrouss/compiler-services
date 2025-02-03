@@ -788,7 +788,7 @@ bool CompilerFrontendCPlusPlus::Compile(const std::string text,
 		kState.fSyntaxTree->fLeafList.push_back(syntax_tree);
 	}
 
-ndk_compile_ok:
+lc_compile_ok:
 	return true;
 }
 
