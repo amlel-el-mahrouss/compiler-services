@@ -12,10 +12,11 @@
 extern "C" int exit(int code);
 
 /// @brief Standard C++ namespace
-namespace std::process_base
+namespace std::process
 {
 	inline int exit(int code)
 	{
 		exit(code);
+		return 0;
 	}
-} // namespace std::process_base
+} // namespace std::process
